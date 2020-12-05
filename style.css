@@ -1,0 +1,55 @@
+html * {
+  font-family: 'Karla', sans-serif;
+  /* background-color: white; */
+}
+#home {
+  background-color: white;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+#home-msg {
+  margin-top: 300px;
+  margin-left: 130px;
+  position: absolute;
+}
+#home-header{
+  height: 70px;
+  width: 575px;
+  font-family: Karla;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 40px;
+  color: #000000;
+  float:left;
+}
+#home-intro {
+  height: 280px;
+  width: 515px;
+  font-family: Karla;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 35px;
+  line-height: 40px;
+  color: #000000;
+}
+#home-img {
+  margin-top: -240px;
+  margin-right: 110px;
+  width: 50%;
+  float: right;
+  height: 50%;
+  object-fit: cover;
+}
+#importance {
+  background-color: #F9C0C9;
+  // height: 500px;
+}
+#importance-img {
+  margin-left: 130px;
+  height: 60%;
+  margin-top: 300px;
+  position: absolute;
+}
