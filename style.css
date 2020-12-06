@@ -153,7 +153,7 @@ a:hover{
 
 
 #find-activity-msg, #choose-activity-msg, #videos-msg, #emotional-msg, #physical-msg, #mental-msg, #social-msg {
-  margin-top: 120px;
+  margin-top: 100px;
   margin-left: 185px;
 }
 #activity-header, #choose-activity-header, #videos-header {
@@ -176,9 +176,46 @@ a:hover{
   color: #000000;
 }
 
+.chosen-activity-placeholder{
+  width: 1100px;
+  font-family: Karla;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 27px;
+  line-height: 33px;
+  color: #000000;
+}
+
+#chosen-activity-placeholder-link{
+  width: 1100px;
+  font-family: Karla;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 27px;
+  line-height: 33px;
+  color: #000000;
+}
+
+#chosen-activity-placeholder-link:hover{
+  color: grey;
+}
+
+
 .preference-buttons {
   height: 45px;
   width: 200px;
+}
+
+.preference-buttons:focus, .preference-buttons2:focus{
+  /* background-color: #e5e5e5; */
+  background-color: rgb(245, 166, 178);
+
+}
+
+.preference-buttons:visited, .preference-buttons2:visited{
+  /* background-color: #e5e5e5; */
+  background-color: rgb(247, 188, 197);
+
 }
 .preference-buttons2 {
   height: 45px;
@@ -196,7 +233,8 @@ a:hover{
 }
 
 .preference-buttons:hover, .preference-buttons2:hover {
-  background-color: rgb(247, 188, 197);
+  background-color: rgb(245, 166, 178);
+  
 }
 
 h3 {
@@ -247,6 +285,14 @@ h3 {
   -webkit-transform: scale(1.05); 
   transform: scale(1.05); 
 }
+ 
+/* #start-link:active {
+  background: #e5e5e5;
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;
+   outline: none;
+} */
 
 #enter-activity-link{
   background-color: rgba(249, 192, 201, 0.75);
@@ -271,6 +317,22 @@ h3 {
 .choose-activity {
   height: 900px;
 }
+#chosen-activity-container {
+  background-color: #F9C0C9;
+  margin-left: 175px;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  border: none;
+  width: 500px;
+  height: 250px;
+  font-size: 36px;
+  font-style: bold;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
 
 #activity-container {
   background-color: #EEEEEE;
@@ -347,7 +409,7 @@ h3 {
 }
 #videos-title-container, #emotional-title-container, #physical-title-container, #mental-title-container, #social-title-container {
   margin-left: 75px;
-  // background-color: #EEEEEE;
+  /* background-color: #EEEEEE; */
   border-radius: 15px;
   border: none;
   height: 130px;
@@ -355,6 +417,7 @@ h3 {
   padding-top: 25px;
   padding-bottom: 25px;
 }
+
 #videos-category {
   margin-top: 10px;
   margin-left: -90px;
@@ -373,6 +436,7 @@ h3 {
 }
 
 #uncertainty-msg{
+  margin-top: 200px;
   min-width: 500px;
   margin-left: 100px;
   position: absolute;
@@ -383,14 +447,15 @@ h3 {
 }
 
 .emotional {
-  height: 900px;
+  height: 1000px;
 }
 
 #emotional-title-container {
-  background-color: #EEEEEE;
+  background-color: rgba(255,255,255, 0.9);
+  /* background-color: #EEEEEE; */
 }
 #emotional-header {
-  margin-left: 285px;
+  margin-left: 290px;
 }
 #emotional-instructions {
   font-size: 22px;
@@ -399,16 +464,17 @@ h3 {
 }
 
 .physical {
-  height: 900px;
+  height: 1000px;
 }
 
 #physical-title-container {
   text-align: center;
-  background-color: #EEEEEE;
+  background-color: rgba(255,255,255, 0.9);
+  /* background-color: #EEEEEE; */
   height: 150px;
 }
 #physical-header {
-  margin-left: -50px;
+  margin-left: -10px;
 }
 #physical-instructions {
   font-size: 22px;
@@ -416,16 +482,17 @@ h3 {
   line-height: 25px;
 }
 .mental {
-  height: 900px;
+  height: 1000px;
 }
 
 #mental-title-container {
   text-align: center;
-  background-color: #EEEEEE;
+  background-color: rgba(255,255,255, 0.9);
+  /* background-color: #EEEEEE; */
   height: 150px;
 }
 #mental-header {
-  margin-left: -50px;
+  margin-left: -10px;
 }
 #mental-instructions {
   font-size: 22px;
@@ -434,12 +501,13 @@ h3 {
 }
 
 .social {
-  height: 900px;
+  height: 1100px;
 }
 
 #social-title-container {
   text-align: center;
-  background-color: #EEEEEE;
+  background-color: rgba(255,255,255, 0.9);
+  /* background-color: #EEEEEE; */
   height: 150px;
 }
 #social-header {
@@ -449,4 +517,53 @@ h3 {
   font-size: 22px;
   margin-left: -5px;
   line-height: 25px;
+}
+
+#subtitle {
+  margin-top: 15px;
+  margin-left:-180px;
+  
+}
+
+#line {
+  margin-top: -37px;
+  margin-left: 305px;
+  text-align: center;
+  width: 500px;
+  height: 47px;
+  border-bottom: 1px solid black;
+  position: absolute;
+}
+
+
+#activities-list {
+  margin-left: -83px;
+  margin-right:93px;
+  width: 24%;
+  display: inline-flex;
+  transition: transform .2s;
+  
+}
+
+#activities-list:hover {
+  -webkit-transform: scale(1.05); 
+  transform: scale(1.05); 
+}
+
+#try-again {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 20px;
+  margin-left: -30px;
+}
+
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding-top: 40px;
+  height: 100px;
+  background-color: white;
+  color: black;
+  text-align: center;
 }
