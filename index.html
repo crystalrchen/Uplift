@@ -7,35 +7,43 @@
     <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet"> 
     <title>Uplift</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
     <link href="style.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="script.js"></script>  
+    
+    <script src="vendor/jquery/jquery.js"></script>
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
   </head>
   <body>
-    <nav class="navbar">
+    <div id="startscrolling"></div>
+    <nav id="mainNav" class="navbar">
       <div class="navbar-links">
         <a href="index.html">
           <img id="logo" src="graphics/logo.png" alt="logo">
           <ul>
-            <li><a href="#about">why is self-care important?</a></li>
-            <li><a href="#find-activity">find an activity</a></li>
-            <li><a href="#videos">self-care videos</a></li>
-            <li><a href="#uncertainty">embracing uncertainty</a></li>
+            <li><a class="js-scroll-trigger" href="#about">why self-care</a></li>
+            <li><a class="js-scroll-trigger" href="#find-activity">find an activity</a></li>
+            <li><a class="js-scroll-trigger" href="#videos">self-care videos</a></li>
+            <li><a class="js-scroll-trigger" href="#uncertainty">embracing uncertainty</a></li>
           </ul>
           <div class="dropdown">
             <button class="dropbtn" style="outline: none">types of self-care</button>
             <div class="dropdown-content">
-              <a href="#emotional">emotional self-care</a>
-              <a href="#physical">physical self-care</a>
-              <a href="#mental">mental self-care</a>
-              <a href="#social">social self-care</a>
+              <a class="js-scroll-trigger" href="#emotional">emotional self-care</a>
+              <a class="js-scroll-trigger" href="#physical">physical self-care</a>
+              <a class="js-scroll-trigger" href="#mental">mental self-care</a>
+              <a class="js-scroll-trigger" href="#social">social self-care</a>
             </div>
           </div>
 
         </a>
       </div>
-    </nav>
- <section class="hero-image" id="hero-image">
+    </nav> 
+
+
+ 	<section class="hero-image" id="hero-image">
     <div class="container">
       <div class="row" style="background-color: white;">
           <span id="home-msg">
@@ -43,10 +51,11 @@
             
 						<img id="home-img" src="graphics/homepage.jpg" type="image">
             <p id="home-intro">Your survival guide for stressful days! Find your self-care activities here just by inputting the time you have.</p>
-           <a href="#about" id="start-link">Get started</a></span>
+           <a class="js-scroll-trigger" href="#about" id="start-link">Get started</a></span>
       </div>
     </div>
-  </section>
+  	</section>
+
   <section class="about" style="background-color: #F9C0C9;" id="about">
     <div class="row">
       <span id="importance-msg">
@@ -60,11 +69,12 @@
 
           It can take as little as 5 minutes to uplift your mind and body. Ready to be a boss?</p>
           </div>
-          <a href="#find-activity" id="find-activity-link">Find your next activity! →</a>
+          <a class="js-scroll-trigger" href="#find-activity" id="find-activity-link">Find your next activity! →</a>
       </span>
     </div>
-  </section>
-  <section class="find-activity" style="background-color: white;" id="find-activity">
+  	</section>
+
+  	<section class="find-activity" style="background-color: white;" id="find-activity">
     <div class="row"> 
       <span id="find-activity-msg">
         <h1 id="activity-header"><b>✨ Find your next self-care activity!</b></h1>
@@ -90,33 +100,40 @@
             value="No preference"></input>
           </div>
         </div><br>
-        <input type="button" value="Enter →" id="enter-activity-link" onClick="onEnterClick()"></input>
-
+        <input type="button" value="Enter →" id="enter-activity-link" onClick="onEnterClick(); location.href='#choose-activity'"></input>
+        
       </span>  
     </div>
   </section>
+
   <section class="choose-activity" style="background-color: white;" id="choose-activity">
     <div class="row">
       <span id="choose-activity-msg">
         <h1 id="choose-activity-header"><b>✨ Find your next self-care activity!</b></h1>
         <p id="choose-activity-instructions">Based on the amount of time you have and activity location, Uplift will provide a self-care activity for you to complete!</p><br><br>
          <div id="activity-container">
-           <p id="choose-activity-instructions">Based on your chosen time length and location, Uplift has suggested:</p>
-           <div class="chosen-activity-container">
+           <p id="choose-activity-instructions">Based on your chosen time length and location, Uplift has suggested:</p><br>
+           <div id="chosen-activity-container">
+             <p class="chosen-activity-placeholder">Enter your preferences <a class="js-scroll-trigger" id="chosen-activity-placeholder-link" href="#find-activity">here</a> to generate your own self-care activity!</p>
+           </div>
+           <div id="try-again">
+            Not interested? <a class="js-scroll-trigger" href="#find-activity" onClick="onTryAgainClick()" style="color: rgb(245, 166, 178)">Try again! →</a>
            </div>
           </div>
           <br>
       </span>  
     </div>
   </section>
+
+	<!-- VIDEOS -->
   <section class="videos" style="background-color: #F9C0C9;" id="videos">
     <div class="row">
       <span id="videos-msg">
         <div id="videos-title-container">
-          <h1 id="videos-header"><b>Self-Care Videos</b></h1>
+          <h1 id="videos-header"><b>🎥 Self-Care Videos</b></h1>
           <p id="videos-instructions">These self-care videos will help replenish you and cultivate your health!</p><br><br>
         </div>    
-        <br><br><p id="videos-category"> workout videos</p><br>
+        <br><br><p id="videos-category">🤸‍♀️ Workout Videos</p><br>
         <div id="videos-list">
           <iframe width="300" height="170" src="https://www.youtube.com/embed/bleOTMDa3_4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -130,7 +147,7 @@
           <iframe width="300" height="170" src="https://www.youtube.com/embed/kwkXyHjgoDM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
 
-        <br><br><p id="videos-category"> stretching videos</p><br>
+        <br><br><p id="videos-category"> 🙆🏻‍♀️ Stretching Videos</p><br>
         <div id="videos-list">
           <iframe width="300" height="170" src="https://www.youtube.com/embed/sTANio_2E0Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -144,7 +161,7 @@
           <iframe width="300" height="170" src="https://www.youtube.com/embed/cHqsM952MUo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
 
-        <br><br><p id="videos-category">peaceful music</p><br>
+        <br><br><p id="videos-category">🎶 Peaceful Music</p><br>
         <div id="videos-list">
           <iframe width="300" height="170" src="https://www.youtube.com/embed/OeHLHNKQCXA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -161,6 +178,7 @@
     </div>
   </section>
 
+	<!-- EMBRACING UNCERTAINTY -->
   <section class="uncertainty" style="background-color: #fffdfb;" id="uncertainty">
     <div class="row">
       <span id="uncertainty-msg">
@@ -171,7 +189,8 @@
       </span>  
     </div>
   </section>
-    <!-- </div> -->
+	
+	<!-- SELF CARE STYLES -->
   <section class="emotional" style="background-color: #F9C0C9;" id="emotional">
     <div class="row">
       <span id="emotional-msg">
@@ -179,7 +198,33 @@
           <h1 id="emotional-header"><b>Emotional Self-Care</b></h1>
           <p id="emotional-instructions"><br>Feeling down and need an uplift? Try some of these activities! </p><br><br>
         </div>   
-
+        <h1 id="subtitle" style="text-align: center; font-size: 28px"><b>indoor and outdoor activities</b></h1>
+        <div id="line"> </div>
+        <br>
+        <div id="activities-list">
+          <img src="graphics/emotional/emotional1.png" width="100%">
+        </div>
+        <div id="activities-list">
+          <img src="graphics/emotional/emotional2.png" width="100%">
+        </div>
+        <div id="activities-list">
+          <img src="graphics/emotional/emotional3.png" width="100%">
+        </div>
+        <div id="activities-list">
+          <img src="graphics/emotional/emotional4.png" width="100%">
+        </div>
+        <div id="activities-list">
+          <img src="graphics/emotional/emotional5.png" width="100%">
+        </div>
+        <div id="activities-list">
+          <img src="graphics/emotional/emotional6.png" width="100%">
+        </div>
+        <div id="activities-list">
+          <img src="graphics/emotional/emotional7.png" width="100%">
+        </div>
+        <div id="activities-list">
+          <img src="graphics/emotional/emotional8.png" width="100%">
+        </div>
       </span>
     </div>
   </section>
@@ -191,7 +236,33 @@
           <h1 id="physical-header"><b>Physical Self-Care</b></h1>
           <p id="physical-instructions"><br>Feeling down and need an uplift? Try any activities <br> you deliberately engage in to enhance your physical well-being.</p><br><br>
         </div>   
-
+        <h1 id="subtitle" style="text-align: center; font-size: 28px"><b>indoor and outdoor activities</b></h1>
+        <div id="line"> </div>
+        <br>
+        <div id="activities-list">
+          <img src="graphics/physical/physical1.png" width="100%">
+        </div>
+        <div id="activities-list">
+          <img src="graphics/physical/physical2.png" width="100%">
+        </div>
+        <div id="activities-list">
+          <img src="graphics/physical/physical3.png" width="100%">
+        </div>
+        <div id="activities-list">
+          <img src="graphics/physical/physical4.png" width="100%">
+        </div>
+        <div id="activities-list">
+          <img src="graphics/physical/physical5.png" width="100%">
+        </div>
+        <div id="activities-list">
+          <img src="graphics/physical/physical6.png" width="100%">
+        </div>
+        <div id="activities-list">
+          <img src="graphics/physical/physical7.png" width="100%">
+        </div>
+        <div id="activities-list">
+          <img src="graphics/physical/physical8.png" width="100%">
+        </div>
       </span>
     </div>
   </section>
@@ -203,7 +274,33 @@
           <h1 id="mental-header"><b>Mental Self-Care</b></h1>
           <p id="mental-instructions"><br>Feeling down and need an uplift? Try any activities to stimulate your<br> mind and cultivate a healthy psyche.</p><br><br>
         </div>   
-
+        <h1 id="subtitle" style="text-align: center; font-size: 28px"><b>indoor and outdoor activities</b></h1>
+        <div id="line"> </div>
+        <br>
+        <div id="activities-list">
+          <img src="graphics/mental/mental1.png" width="100%">
+        </div>
+        <div id="activities-list">
+          <img src="graphics/mental/mental2.png" width="100%">
+        </div>
+        <div id="activities-list">
+          <img src="graphics/mental/mental3.png" width="100%">
+        </div>
+        <div id="activities-list">
+          <img src="graphics/mental/mental4.png" width="100%">
+        </div>
+        <div id="activities-list">
+          <img src="graphics/mental/mental5.png" width="100%">
+        </div>
+        <div id="activities-list">
+          <img src="graphics/mental/mental6.png" width="100%">
+        </div>
+        <div id="activities-list">
+          <img src="graphics/mental/mental7.png" width="100%">
+        </div>
+        <div id="activities-list">
+          <img src="graphics/mental/mental8.png" width="100%">
+        </div>
       </span>
     </div>
   </section>
@@ -215,12 +312,47 @@
           <h1 id="social-header"><b>Social Self-Care</b></h1>
           <p id="social-instructions"><br>Feeling down and need an uplift? Try any activities that<br> nurture your relationships with others. </p><br><br>
         </div>   
-
+        <h1 id="subtitle" style="text-align: center; font-size: 28px"><b>indoor and outdoor activities</b></h1>
+        <div id="line"> </div>
+        <br>
+        <div id="activities-list">
+          <img src="graphics/social/social1.png" width="100%">
+        </div>
+        <div id="activities-list">
+          <img src="graphics/social/social2.png" width="100%">
+        </div>
+        <div id="activities-list">
+          <img src="graphics/social/social3.png" width="100%">
+        </div>
+        <div id="activities-list">
+          <img src="graphics/social/social4.png" width="100%">
+        </div>
+        <div id="activities-list">
+          <img src="graphics/social/social5.png" width="100%">
+        </div>
+        <div id="activities-list">
+          <img src="graphics/social/social6.png" width="100%">
+        </div>
+        <div id="activities-list">
+          <img src="graphics/social/social7.png" width="100%">
+        </div>
+        <div id="activities-list">
+          <img src="graphics/social/social8.png" width="100%">
+        </div>
       </span>
+    </div>
+    <div class="footer">
+      <p>made with ♡ by the Uplift team © 2020</p>
     </div>
   </section>
 
 
+    <script type="text/javascript" src="js/scrolling-nav.js"></script> 
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
