@@ -52,7 +52,7 @@ let outdoorThirtyToSixty = [
 	'🚶‍♀️ Go for a long walk/hike! 🚶‍♀️️',
 	'🚲 Ride a bike to places you have not been to before. 🚲',
 	'🧺 Go outside and have a picnic (with or without friends/family!). 🧺',
-	'🐕 o outside and play with your pet! 🐕',
+	'🐕 Go outside and play with your pet! 🐕',
 ]
 
 let indoorSixtyPlus = [
