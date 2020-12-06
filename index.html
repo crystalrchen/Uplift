@@ -5,48 +5,225 @@
     <meta name="viewport" content="width=device-width">
 
     <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet"> 
-
-
     <title>Uplift</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <link href="style.css" rel="stylesheet" type="text/css" />
-
+    <script type="text/javascript" src="script.js"></script>  
   </head>
   <body>
-    <div class="navbar">
+    <nav class="navbar">
       <div class="navbar-links">
+        <a href="index.html">
+          <img id="logo" src="graphics/logo.png" alt="logo">
+          <ul>
+            <li><a href="#about">why is self-care important?</a></li>
+            <li><a href="#find-activity">find an activity</a></li>
+            <li><a href="#videos">self-care videos</a></li>
+            <li><a href="#uncertainty">embracing uncertainty</a></li>
+          </ul>
+          <div class="dropdown">
+            <button class="dropbtn" style="outline: none">types of self-care</button>
+            <div class="dropdown-content">
+              <a href="#emotional">emotional self-care</a>
+              <a href="#physical">physical self-care</a>
+              <a href="#mental">mental self-care</a>
+              <a href="#social">social self-care</a>
+            </div>
+          </div>
 
-      </div>
-    </div>
-    <section id="home">
-      <span id="home-msg">
-      <p id="home-header">👋 Welcome to Uplift!</p>
-      <img id="home-img" src="graphics/homepage.jpg" type="image">
-      <p id="home-intro">Find your self-care activities here just by inputting the time you have. (put slogan later)</p>
-      </span>
-    </section>
-
-    <section id="importance">
-      <p> testing</p>
-      <img id="importance-img"  src="graphics/meditation.png" type="image">
-    </section>
-    
-
-  <!-- Just added this to test something out, can be removed if you want
-   <nav class="navbar navbar-expand-sm bg-dark justify-content-between">
-    <a class="navbar-brand" href="#">Uplift</a>
-      <div class="navbar-nav justify-content-end">
-        <a class="nav-item nav-link" href="#">About</a>
-        <a class="nav-item nav-link" href="#">Services</a>
-        <a class="nav-item nav-link" href="#">Contact</a>
+        </a>
       </div>
     </nav>
-    -->
+ <section class="hero-image" id="hero-image">
+    <div class="container">
+      <div class="row" style="background-color: white;">
+          <span id="home-msg">
+            <p id="home-header"><b>👋 Welcome to Uplift!</b></p>
+            
+						<img id="home-img" src="graphics/homepage.jpg" type="image">
+            <p id="home-intro">Your survival guide for stressful days! Find your self-care activities here just by inputting the time you have.</p>
+           <a href="#about" id="start-link">Get started</a></span>
+      </div>
+    </div>
+  </section>
+  <section class="about" style="background-color: #F9C0C9;" id="about">
+    <div class="row">
+      <span id="importance-msg">
+        <img id="importance-img" src="graphics/meditation.png" type="image">
+        <div id="about-intro">
+        <h1 id="importance-header"><b>💖 Why is self-care important?</b></h1>
+        <p id="importance-para">
+          <br><br>We all know that 2020 has been a rough year, but that does not mean we have to forget about self care.<br><br>
+
+          It is scientifically proven that self care is essential to keep your mind and body healthy. <br><br>
+
+          It can take as little as 5 minutes to uplift your mind and body. Ready to be a boss?</p>
+          </div>
+          <a href="#find-activity" id="find-activity-link">Find your next activity! →</a>
+      </span>
+    </div>
+  </section>
+  <section class="find-activity" style="background-color: white;" id="find-activity">
+    <div class="row"> 
+      <span id="find-activity-msg">
+        <h1 id="activity-header"><b>✨ Find your next self-care activity!</b></h1>
+        <p id="activity-instructions">Based on the amount of time you have and activity location, Uplift will provide a self-care activity for you to complete!</p><br><br>
+        <div id="preference-container">
+          <div class="preference-containers">
+            <h3>I can spend...</h3>
+            <input type="button" class="preference-buttons" onclick="onTimeClick(this.value)" value="5-10 mins"></input>
+            <input type="button" class="preference-buttons" onclick="onTimeClick(this.value)" value="10-30 mins"></input>
+            <input type="button" class="preference-buttons" onclick="onTimeClick(this.value)" value="30-60 mins"></input>
+            <input type="button" class="preference-buttons" onclick="onTimeClick(this.value)" value="60+ mins"></input>
+          </div>
+          <br>
+          <div class="preference-containers">
+            <h3>I want an activity...</h3>
+            <input type="button" class="preference-buttons" onclick="onTypeClick(this.value)"
+            value="Indoors"></input>
+            <input type="button" class="preference-buttons"
+            onclick="onTypeClick(this.value)"
+            value="Outdoors"></input>
+            <input type="button" class="preference-buttons2"
+            onclick="onTypeClick(this.value)"
+            value="No preference"></input>
+          </div>
+        </div><br>
+        <input type="button" value="Enter →" id="enter-activity-link" onClick="onEnterClick()"></input>
+
+      </span>  
+    </div>
+  </section>
+  <section class="choose-activity" style="background-color: white;" id="choose-activity">
+    <div class="row">
+      <span id="choose-activity-msg">
+        <h1 id="choose-activity-header"><b>✨ Find your next self-care activity!</b></h1>
+        <p id="choose-activity-instructions">Based on the amount of time you have and activity location, Uplift will provide a self-care activity for you to complete!</p><br><br>
+         <div id="activity-container">
+           <p id="choose-activity-instructions">Based on your chosen time length and location, Uplift has suggested:</p>
+           <div class="chosen-activity-container">
+           </div>
+          </div>
+          <br>
+      </span>  
+    </div>
+  </section>
+  <section class="videos" style="background-color: #F9C0C9;" id="videos">
+    <div class="row">
+      <span id="videos-msg">
+        <div id="videos-title-container">
+          <h1 id="videos-header"><b>Self-Care Videos</b></h1>
+          <p id="videos-instructions">These self-care videos will help replenish you and cultivate your health!</p><br><br>
+        </div>    
+        <br><br><p id="videos-category"> workout videos</p><br>
+        <div id="videos-list">
+          <iframe width="300" height="170" src="https://www.youtube.com/embed/bleOTMDa3_4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div id="videos-list">
+          <iframe width="300" height="170" src="https://www.youtube.com/embed/MxLL9Scvmzo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div id="videos-list">
+          <iframe width="300" height="170" src="https://www.youtube.com/embed/kwkXyHjgoDM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div id="videos-list">
+          <iframe width="300" height="170" src="https://www.youtube.com/embed/kwkXyHjgoDM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <br><br><p id="videos-category"> stretching videos</p><br>
+        <div id="videos-list">
+          <iframe width="300" height="170" src="https://www.youtube.com/embed/sTANio_2E0Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div id="videos-list">
+          <iframe width="300" height="170" src="https://www.youtube.com/embed/a3VTQyNZ0Bo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div id="videos-list">
+          <iframe width="300" height="170" src="https://www.youtube.com/embed/a9WC_eLmP30" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div id="videos-list">
+          <iframe width="300" height="170" src="https://www.youtube.com/embed/cHqsM952MUo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <br><br><p id="videos-category">peaceful music</p><br>
+        <div id="videos-list">
+          <iframe width="300" height="170" src="https://www.youtube.com/embed/OeHLHNKQCXA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div id="videos-list">
+          <iframe width="300" height="170" src="https://www.youtube.com/embed/g8NVwN0_mks" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div id="videos-list">
+          <iframe width="300" height="170" src="https://www.youtube.com/embed/cjkFG6bHGNc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div id="videos-list">
+          <iframe width="300" height="170" src="https://www.youtube.com/embed/bKf9I4vftFE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </span>  
+    </div>
+  </section>
+
+  <section class="uncertainty" style="background-color: #fffdfb;" id="uncertainty">
+    <div class="row">
+      <span id="uncertainty-msg">
+        <h1 id="uncertainty-header"><b>✨ Embracing uncertainty</b></h1>
+        <img id="uncertainty-img" src="graphics/byte.png" type="image">
+        <p id="uncertainty-intro">Let's be real. 2020 has not been the best year. 2020 is the definition of uncertainty, and uncertainty can definitely be scary. During these times, self-care is more important than ever. It helps us stay in touch with ourselves and embrace the uncertainty in our world.</p><br><br>
+        <br>
+      </span>  
+    </div>
+  </section>
+    <!-- </div> -->
+  <section class="emotional" style="background-color: #F9C0C9;" id="emotional">
+    <div class="row">
+      <span id="emotional-msg">
+        <div id="emotional-title-container">
+          <h1 id="emotional-header"><b>Emotional Self-Care</b></h1>
+          <p id="emotional-instructions"><br>Feeling down and need an uplift? Try some of these activities! </p><br><br>
+        </div>   
+
+      </span>
+    </div>
+  </section>
+
+  <section class="physical" style="background-color: #F9C0C9;" id="physical">
+    <div class="row">
+      <span id="physical-msg">
+        <div id="physical-title-container">
+          <h1 id="physical-header"><b>Physical Self-Care</b></h1>
+          <p id="physical-instructions"><br>Feeling down and need an uplift? Try any activities <br> you deliberately engage in to enhance your physical well-being.</p><br><br>
+        </div>   
+
+      </span>
+    </div>
+  </section>
+
+  <section class="mental" style="background-color: #F9C0C9;" id="mental">
+    <div class="row">
+      <span id="mental-msg">
+        <div id="mental-title-container">
+          <h1 id="mental-header"><b>Mental Self-Care</b></h1>
+          <p id="mental-instructions"><br>Feeling down and need an uplift? Try any activities to stimulate your<br> mind and cultivate a healthy psyche.</p><br><br>
+        </div>   
+
+      </span>
+    </div>
+  </section>
+
+  <section class="social" style="background-color: #F9C0C9;" id="social">
+    <div class="row">
+      <span id="social-msg">
+        <div id="social-title-container">
+          <h1 id="social-header"><b>Social Self-Care</b></h1>
+          <p id="social-instructions"><br>Feeling down and need an uplift? Try any activities that<br> nurture your relationships with others. </p><br><br>
+        </div>   
+
+      </span>
+    </div>
+  </section>
+
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
   </body>
 </html>
