@@ -11,7 +11,15 @@ If the user wants to pick for themselves, they can visit the “types of self-ca
 We built Uplift using HTML5, CSS3, JavaScript, jQuery, and Figma.
 
 # Accomplishments that we're proud of
-We are really proud of our purpose, our team, and our design. The idea: From initiating the idea to the MVP, we are extremely proud of our product and its features. Functionality: We were able to create a scrollable user experience with jQuery and also create an activity-generator with JavaScript. Tools: In an age where everybody sticks to popular frameworks, we chose to exhibit our HTML, CSS, and vanilla JS skills and build our app purely based on that. Teamwork: We learned how to collaborate well according to each of our strengths and were able to deploy a functional web app important for self-care in 2020 and beyond.
+We are really proud of our purpose, our team, and our design. 
+The idea: 
+From initiating the idea to the MVP, we are extremely proud of our product and its features. 
+Functionality: 
+We were able to create a scrollable user experience with jQuery and also create an activity-generator with JavaScript. 
+Tools: 
+In an age where everybody sticks to popular frameworks, we chose to exhibit our HTML, CSS, and vanilla JS skills and build our app purely based on that. 
+Teamwork: 
+We learned how to collaborate well according to each of our strengths and were able to deploy a functional web app important for self-care in 2020 and beyond.
 
 # What we learned
 We learned how important UX is and how to create our uplift activity generator with JavaScript. Our unique feature is the activity generator, and we learned about how to extract user input and use it to output an activity catered to that certain user. With help from mentors and TTNY workshops, we also learned how to code new features such as JavaScript randomization and anchor scrolling functions. We also learned how to use jQuery, as this was our first time using it.
