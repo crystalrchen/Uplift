@@ -1,4 +1,4 @@
-# Uplift
+# Uplift - TechTogether New York 2020
 ## Inspiration
 Let's be real. 2020 has not been the best year. 2020 is the definition of uncertainty, and uncertainty can definitely be scary. We were inspired by the lack of self-care that is practiced in today's society, especially during this pandemic, which can be extremely straining—mentally, emotionally, and physically. During these times, self-care is more important than ever. It helps us stay in touch with ourselves and embrace the uncertainty in our world. In fact, it can take as little as 5 minutes to uplift your mind and body. Our new web app, **Uplift** combats that by giving a survival guide for stressful and unmotivating days. 
 
