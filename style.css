@@ -20,6 +20,9 @@ html * {
   color: #000000;
   float:left;
 }
+#home-header, #home-intro {
+  margin-left: -8.5vh;
+} 
 #home-intro, #uncertainty-intro {
 
   height: 34vh;
